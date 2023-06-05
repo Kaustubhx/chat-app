@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Your Page Title
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">chat-list</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid class="space-y-2 my-3" *ngFor="let user of users">
+    <ion-row class="px-3 space-x-3 flex items-center flex-nowrap">
+      <ion-row class="relative h-14 w-14 flex-shrink-0">
+        <img class="absolute max-w-auto h-full object-cover rounded-full" [src]="user.picture.large"
+          alt="">
+      </ion-row>
+
+      <ion-row class="flex items-center flex-nowrap">
+        <ion-row class="space-y-1">
+          <ion-text class="font-semibold">{{user.name.first}} {{user.name.last}}</ion-text>
+          <ion-text class="line-clamp-1 text-sm font-light">This is the last message the sender sent sent sent sent sent
+            sent
+            sent
+          </ion-text>
+        </ion-row>
+
+        <ion-row class="flex flex-col items-end">
+          <ion-text class="text-xs font-light">7:21pm</ion-text>
+          <ion-row class="flex items-center justify-center bg-green-500 rounded-full h-6 w-6 mt-1">
+            <ion-text class="text-sm font-light">2</ion-text>
+          </ion-row>
+        </ion-row>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button (click)="importContacts()">
+    Import Contacts
+  </ion-button>
+</ion-content>

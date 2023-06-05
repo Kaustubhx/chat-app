@@ -13,28 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="space-y-2 my-3">
-    <div class="px-3 space-x-3 flex items-center">
-      <div class="relative h-14 w-14 flex-shrink-0">
-        <img class="absolute max-w-auto h-full object-cover rounded-full" src="../../assets/images/chat-app-user-1.jpg"
-          alt="">
-      </div>
-
-      <div class="flex items-center">
-        <div class="space-y-1">
-          <h4 class="font-semibold">Robert Whiteman</h4>
-          <p class="line-clamp-1 text-sm font-light">This is the last message the sender sent sent sent sent sent sent
-            sent
-          </p>
-        </div>
-
-        <div class="flex flex-col items-end">
-          <span class="text-xs font-light">7:21pm</span>
-          <div class="flex items-center justify-center bg-green-500 rounded-full h-6 w-6 mt-1">
-            <span class="text-sm font-light">2</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <swiper-container [slidesPerView]="1" [loop]="true" [pagination]="true">
+    <swiper-slide *ngFor="let template of customTemplates">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>{{template[1].text}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{template[0].text}}
+        </ion-card-content>
+        <ion-button (click)="goToContacts()">
+          {{template[3].buttons[0].text}}
+        </ion-button>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
