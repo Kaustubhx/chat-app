@@ -7,28 +7,83 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" [scrollEvents]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
 
-  <swiper-container [slidesPerView]="1" [loop]="true" [pagination]="true">
-    <swiper-slide *ngFor="let template of customTemplates">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>{{template[1].text}}</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          {{template[0].text}}
-        </ion-card-content>
-        <ion-button (click)="goToContacts()">
-          {{template[3].buttons[0].text}}
-        </ion-button>
-      </ion-card>
-    </swiper-slide>
-  </swiper-container>
+      <ion-text class="template-container-title">
+        Best template for shopname
+      </ion-text>
+      <swiper-container [slidesPerView]="1" [loop]="true" [pagination]="true">
+        <swiper-slide *ngFor="let template of customTemplates">
+          <ion-grid class="template-container">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+            <ion-row class="flex flex-col">
+              <ion-text>Card Title</ion-text>
+              <ion-text>{{template[1].text}}</ion-text>
+            </ion-row>
+
+            <ion-text class="template-text">
+              {{template[0].text}}
+            </ion-text>
+            <ion-button (click)="goToContacts()">
+              {{template[3].buttons[0].text}}
+            </ion-button>
+          </ion-grid>
+        </swiper-slide>
+      </swiper-container>
+    </ion-row>
+
+    <!-- 2nd Template carousel -->
+    <ion-row>
+      <ion-text class="template-container-title">
+        Best template for top selling products
+      </ion-text>
+      <swiper-container [slidesPerView]="1" [loop]="true" [pagination]="true">
+        <swiper-slide *ngFor="let template of customTemplates">
+          <ion-grid class="template-container">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+            <ion-row class="flex flex-col">
+              <ion-text>Card Title</ion-text>
+              <ion-text>{{template[1].text}}</ion-text>
+            </ion-row>
+
+            <ion-text class="template-text">
+              {{template[0].text}}
+            </ion-text>
+            <ion-button (click)="goToContacts()">
+              {{template[3].buttons[0].text}}
+            </ion-button>
+          </ion-grid>
+        </swiper-slide>
+      </swiper-container>
+    </ion-row>
+
+    <!-- 3nd Template carousel -->
+    <ion-row>
+      <ion-text class="template-container-title">
+        Best trendy template
+      </ion-text>
+      <swiper-container [slidesPerView]="1" [loop]="true" [pagination]="true">
+        <swiper-slide *ngFor="let template of customTemplates">
+          <ion-grid class="template-container">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+            <ion-row class="flex flex-col">
+              <ion-text>Card Title</ion-text>
+              <ion-text>{{template[1].text}}</ion-text>
+            </ion-row>
+
+            <ion-text class="template-text">
+              {{template[0].text}}
+            </ion-text>
+            <ion-button (click)="goToContacts()">
+              {{template[3].buttons[0].text}}
+            </ion-button>
+          </ion-grid>
+        </swiper-slide>
+      </swiper-container>
+    </ion-row>
+  </ion-grid>
 </ion-content>

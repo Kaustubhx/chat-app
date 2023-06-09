@@ -20,10 +20,6 @@ export class HomePage implements OnInit {
     this.templates = this.templateService.popularTemplates;
     
     this.customTemplates = this.templates.map((template: any) => template.components);
-    for(let text of this.customTemplates) {
-      console.log(text, 'from for OF')
-      console.log(text[3].buttons[0].text)
-    }
   }
 
   goToContacts(): void {
